@@ -26,8 +26,9 @@ const Contador = () => {
 
     // Renderizar el contador en formato MM:SS
     return (
-        <div>
-            <h1>{tiempo.getMinutes().toString().padStart(2, '0')}:{tiempo.getSeconds().toString().padStart(2, '0')}</h1>
+        <div className="text-black flex flex-col items-center">
+            <p className='text-xl'>Empezamos en:</p>
+            <p className='text-3xl'>{tiempo.getMinutes().toString().padStart(2, '0')}:{tiempo.getSeconds().toString().padStart(2, '0')}</p>
         </div>
     );
 };
