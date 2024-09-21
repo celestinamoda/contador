@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 const Contador = () => {
-    const [tiempo, setTiempo] = useState(new Date(0, 0, 0, 0, 0, 5));
+
+    // Obtener los parámetros de la URL
+    const search = typeof window !== 'undefined' ? window.location.search:'';
+    const params = new URLSearchParams(search);
+    const minutos = Number(params.get('minutos'))??0;
+    const segundos = Number(params.get('segundos'))??0;
+
+    const [tiempo, setTiempo] = useState(new Date(0, 0, 0, 0, minutos, segundos));
 
     let interval: any;
 
