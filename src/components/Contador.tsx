@@ -32,3 +32,4 @@ const Contador = () => {
     );
 };
 
+export default Contador;
